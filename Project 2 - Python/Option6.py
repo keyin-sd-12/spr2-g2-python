@@ -52,6 +52,7 @@ def main():
 
     # Display the results
     print()
+    print()
     print(f" " * 36 + f"(709) 555-1234") 
     print(f" " * 23 + f"-" * 40) 
     print(f" " * 33 + f"PROFIT LISTING REPORT") 
@@ -68,6 +69,5 @@ def main():
     print()
     print()
 
-#  testing main menu
 if __name__ == "__main__":
     main()
