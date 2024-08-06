@@ -1,155 +1,73 @@
-#Description:
-#Name: 
-#date:
+#Description: Print Company Profit Listing for HAB Taxi Services Company Services System
+#Name: Melanie Adams
+#Date: Aug 05 24
 
-#imports:
-
-#definitions:
-
-# Description: Print Company Profit Listing for HAB Taxi Services Company Services System
-# Author: Melanie Adams
-# Date(s): Aug 05 24
-
-
-# Define required libraries.
+# Imports
 from datetime import datetime
+
+# Constants
 import FormatValues as FV
 
+# Gather inputs
+start_date = datetime.strptime(input("Enter the start date (YYYY-MM-DD): "), '%Y-%m-%d')
+end_date = datetime.strptime(input("Enter the end date (YYYY-MM-DD): "), '%Y-%m-%d')
+start_dateDSP = start_date.strftime('%Y-%m-%d')
+end_dateDSP = end_date.strftime('%Y-%m-%d')
 
-
-# Define program constants.
-
-
-
-# Define program functions.
-
-
-
-# Main report processing starts here.
-
-
-# Generate report headings.
-
-print()
-print(f" " * 23 + f"-" * 40) 
-print(f" " * 35 + f"HAB TAXI SERVICES") 
-print(f" " * 36 + f"123 ANY STREET") 
-print(f" " * 32 + f"ST. JOHN'S, NL A1A 1A1") 
-print(f" " * 36 + f"(709) 555-1234") 
-print(f" " * 23 + f"-" * 40) 
-print(f" " * 33 + f"PROFIT LISTING REPORT") 
-print( )
-print(f" " * 24 + f"From: YYYY-MM-DD" + f" " * 8 + f"To: YYYY-MM-DD" )
-print(f" " * 23 + f"-" * 40) 
-print(f" " * 23 + f"Total Revenues:" + f" " * 15 + f"$##,###.##")
-print(f" " * 23 + f"Total Expenses:" + f" " * 15 + f"$##,###.##")
-print(f" " * 23 + f"-" * 40) 
-print(f" " * 23 + f"Profit  (Loss):" + f" " * 15 + f"$##,###.##")
-print(f" " * 23 + f"-" * 40) 
-print(f" " * 31 + f"Thank you! Have a nice day!") 
-print(f" " * 23 + f"-" * 40) 
-print()
-print()
-
-
-  # print(f" " * 39 + "[ CUSTOMER INFO ]" + " " * 39)
-  # print()
-  # print(f"Policy #: {polNum:<73} Date: {invDate}")
-  # print()
-  # print()
-  # print(f"{fullName:<75} {custAdd:>24}")
-  # print(f"{custPhone:<75} {cityProvPCDSP:>24}")
-  # print()
-  # print()
-  # print(f" " * 34 + "[ POLICY COVERAGE DETAILS ]" + " " * 34)
-  # print()
-  # print(f"   # of" + " " * 20 + "Extra" + " " * 25 + "Glass" + " " * 25 + "Loaner Car")
-  # print(f"   Cars" + " " * 20 + "Liability" + " " * 21 + "Coverage" + " " * 22 + "Coverage") 
-  # print()
-  # print(f"-" * 100)
-  # print()
-  # print(f"     {numCarsInsDSP}" + " " * 25 + f"{extraLiability}" + " " * 29 + f"{optGlassCov}" + " " * 29 + f"{optLoanerCar}")
-  # print()
-  # print(f"-" * 100)
-  # print()
-  # print()
-  # print(f" " * 38 + "[ PAYMENT DETAILS ]" + " " * 34)
-  # print()
-  # print(f" Premiums for {numCarsInsDSP} cars:" + " " * 69 + f"{insPremDSP:>9s}")
-  # print(f" Extra coverages: " + " " * 72 + f"{totalExtraCostDSP:>9s}")
-  # print()
-  # print(f"-" * 25 + " " * 64 + "-" * 11)
-  # print()
-  # print(f" Subtotal: " + " " * 79 +  f"{subtotalDSP:>9s}")
-  # print(f" HST: " + " " * 84 +  f"{HSTAmtDSP:>9s}")  
-  # print()
-  # print(f"-" * 25 + " " * 64 + "-" * 11)
-  # print()
-  # print(f" Total insurance amount:" + " " * 66 +  f"{totalAMTDSP:>9s}")  
-  # print()
-  # print(f" Payment option:" + " " * 82 +  f"{paymentTypeDSP}")
-  # print(f" Down payment:" + " " * 75 +  f"-{downValueDSP:>8s}")
-  # print()
-  # print(f"-" * 25 + " " * 64 + "-" * 11)
-  # print()
-  # print(f" Total owing:" + " " * 77 +  f"{totalAMTDSP:>9s}")
-  # print(f" Processing fee (if monthly):" + " " * 61 +  f"{monthProcessingFeeDSP:>9s}")
-  # print()
-  # print()
-  # print(f" " * 27 + f"First payment of {monthPayAMTDSP} due on {monthPayDateDSP}")
-  # print()
-  # print(f"-" * 100)
-  # print()
-  # print()
-  # print(f" " * 39 + "[ PREVIOUS CLAIMS ]" + " " * 34)  
-  # print()
-  # print()
-  # print(f" Claim #" + " " * 35 + "Claim Date" + " " * 39 + "Amount")
-  # print()
-  # print(f"-" * 100)
-  # print()
-  # for item in claims:
-  #   print(f" {item[0]}" + " " * 37 + f"{item[1]}" + " " * 37 + f"{item[2]}")
-  # print()
-  # print(f"-" * 100)
-  # print()
-  # print(f" " * 27 + f"Thank you for choosing One Stop Insurance!")
-  # print()
-
-
-
-
-
-
-
-# Initialize counters and accumulators.
-
-# Open the data file.
-
-# Process each line (record) in the file in a loop.
-#for Record in f:
-   
- 
-    # Read the record.  Grab values from the list.
-
-
-    # Perform required calculations.
-
-
-    # Display the detail line.
-
-    
-    # Update counters and accumulators.
-
-
-
-# Close the file.
-
-# Print summary data - counters and accumulators.
-
-
+# Main Program
 def main():
-    print("This is option Six") #testing main menu
 
+    total_expenses = 0
+    # Open the expense file for reading 
+    f = open('Expenses.dat', 'r')
+    
+    # Read the record
+    for expense in f:
+        expense_list = expense.split(',')
+        expense_date = datetime.strptime(expense_list[1].strip(), '%Y-%m-%d')  # Adjust the index based on your file format
+        if start_date <= expense_date <= end_date:
+            expense_amount = float(expense_list[10].strip())
+            # Add the expense amount to the total expenses
+            total_expenses += expense_amount
+    # Close the file
+    f.close()
+
+    total_revenue = 0 
+    # Open the revenue file for reading
+    f = open('Revenue.dat', 'r')
+    
+    # Read the record
+    for revenue in f:
+        revenue_list = revenue.split(',')
+        revenue_date = datetime.strptime(revenue_list[1].strip(), '%Y-%m-%d')  # Adjust the index based on your file format
+        if start_date <= revenue_date <= end_date:
+            revenue_amount = float(revenue_list[6].strip())
+            # Add the revenue amount to the total revenues
+            total_revenue += revenue_amount
+
+    # Close the file
+    f.close()  
+
+    profit = total_revenue - total_expenses
+
+    # Display the results
+    print()
+    print(f" " * 36 + f"(709) 555-1234") 
+    print(f" " * 23 + f"-" * 40) 
+    print(f" " * 33 + f"PROFIT LISTING REPORT") 
+    print( )
+    print(f" " * 24 + f"From: " + str(start_dateDSP) + f" " * 8 + f"To: " + str(end_dateDSP))
+    print(f" " * 23 + f"-" * 40) 
+    print(f" " * 23 + f"Total Revenues:" + f" " * 15 + f"{FV.FDollar2(total_revenue):>10s}")
+    print(f" " * 23 + f"Total Expenses:" + f" " * 15 + f"{FV.FDollar2(total_expenses):>10s}")
+    print(f" " * 23 + f"-" * 40) 
+    print(f" " * 23 + f"Profit  (Loss):" + f" " * 15 + f"{FV.FDollar2(profit):>10s}")
+    print(f" " * 23 + f"-" * 40) 
+    print(f" " * 31 + f"Thank you! Have a nice day!") 
+    print(f" " * 23 + f"-" * 40) 
+    print()
+    print()
+
+#  testing main menu
 if __name__ == "__main__":
     main()
