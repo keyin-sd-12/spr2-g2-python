@@ -1,6 +1,7 @@
 #Description: A program to generate a corporate summary report.
-#Name: Me
-#date: The date the program was written
+#Name: Jacob Crummey
+#date: August 1, 2024
+#EDIT - JL August 10, 2024 - Adjusted Filepaths to run in github.
 
 # Imports:
 import datetime
@@ -9,8 +10,6 @@ import FormatValues as FV
 # Constants:
 CUR_DATE = datetime.datetime.now()
 
-# Main Progam:
-__name__ = "__main__" # REMOVE WHEN DONE TESTING!! !!! !!! !!! !!!
 
 def main():
     print()
@@ -57,7 +56,7 @@ def main():
     
     
     # Open the expense file for reading 
-    f = open('Expenses.dat', 'r')
+    f = open('Project 2 - Python/Expenses.dat', 'r')
     
     # Read the record
     for Expense in f:
@@ -109,7 +108,7 @@ def main():
     f.close()
     
     # Open the Revenue file for reading
-    f = open('Revenue.dat', 'r')
+    f = open('Project 2 - Python/Revenue.dat', 'r')
     
     # Read the record
     for Revenue in f:
@@ -139,7 +138,7 @@ def main():
     f.close()
     
     # Open the Employee file for reading
-    f = open('Employee.dat', 'r')
+    f = open('Project 2 - Python/Employee.dat', 'r')
     
     # Read the record
     for Employee in f:
