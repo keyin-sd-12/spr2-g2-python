@@ -19,13 +19,25 @@ def Val_YN(string):
         val = False
     return val, if_yes
 
-def read_maintenance():
+def read_maintenance(run):
     with open("Project 2 - Python/Maintenance.dat", "r") as f:
         global Maintenance_ID
+        Maintenance_ID = []
+        global Invoice_ID
         maintenance_list = f.read().split("\n")
-        Maintenance_ID = maintenance_list[-1]
-        Maintenance_ID = Maintenance_ID.split(",")
-        Maintenance_ID = int(Maintenance_ID[0])+1
+        if run == "1": #if a new maintence expense, then Maintenance_ID is the previous number plus one.
+            Maintenance_ID = maintenance_list[-1]
+            Maintenance_ID = Maintenance_ID.split(",")
+            Maintenance_ID = int(Maintenance_ID[0])+1
+        else: #see if there is a match for maintence IDs in maintence list.
+            for list in maintenance_list:
+                list = list.split(",")
+                if list[1] == Invoice_ID:
+                    Maintenance_ID.append(list[0])
+            if Maintenance_ID == []:
+                Maintenance_ID = "0" # 0 if there are no matches in list
+            Maintenance_ID = "|".join(map(str, Maintenance_ID)) #list joined by "|" so main data is parsed with ","
+        
         
 def get_invoicenumber(run):
     if run == "1": #if maintence this is a maintence invoice:
@@ -98,12 +110,13 @@ def main():
         run = input("\n    Enter Choice: ")
         if not run.isdigit(): #if input is not a number
             print("\nInvalid input. Please enter a valid number.\n")
+        
         elif run == "1" or run == "2": 
-            #Maintenance Expense
             Invoice_ID = get_invoicenumber(run)
+            read_maintenance(run)
             Invoice_date = get_date("\n    Invoice Date")
             #Driver_ID
-            if one_invoice:
+            if one_invoice: #One invoice maintence or option 2
                 while True:
                     Driver_ID = input("\n    Driver Number: ")
                     if not Driver_ID.isdigit():
@@ -116,9 +129,8 @@ def main():
             #write to expense file
             if one_invoice:
                 with open ("Project 2 - Python/Expenses.dat", "a") as f:
-                    f.write(f"\n{Invoice_ID},{Invoice_date},{Driver_ID},{Subtotal},{HST},{Total}")
+                    f.write(f"\n{Invoice_ID},{Invoice_date},{Driver_ID},{Maintenance_ID},{Subtotal},{HST},{Total}")
             if run ==1:
-                read_maintenance()
                 Maintenance_date = get_date("\n    Maintenance Date: ")
                 Maintenance_description = input("\n    Descitpion of Maintenance: ")
                 Maintenance_description.replace(",", "|") #won't change the abilty to read the file if commas are in the descritpion.
@@ -128,6 +140,7 @@ def main():
                         break
                     else:
                         print("\nInvalid Car ID. Please enter a valid Car ID.")
+                #write to maintenance file
                 with open("\nProject 2 - Python/Maintenance.dat", "a") as f:
                     f.write(f"\n{Maintenance_ID},{Invoice_ID},{Car_ID},{Maintenance_date},{Maintenance_description},{Total}")
 
@@ -137,12 +150,6 @@ def main():
         else:
             print("Invalid option. Please enter 1, 2 or 3\n")
         
-    
-        
-    
-    
-#6001,1001,1918,2022-04-01,Oil Change,50.00,7.50,57.50
-
 
 if __name__ == "__main__":
     main()
