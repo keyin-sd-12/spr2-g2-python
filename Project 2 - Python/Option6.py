@@ -2,6 +2,7 @@
 #Name: Melanie Adams
 #Date: Aug 05 24
 #EDIT - JL August 10, 2024 - Adjusted Filepaths to run in github.
+#EDIT - JL August 10, 2024 - Adjusted Filepaths due to feedback - will no longer run with github desktop.
 
 # Imports
 from datetime import datetime
@@ -20,7 +21,7 @@ def main():
 
     total_expenses = 0
     # Open the expense file for reading 
-    f = open('Project 2 - Python/Expenses.dat', 'r')
+    f = open('Expenses.dat', 'r')
     
     # Read the record
     for expense in f:
@@ -35,7 +36,7 @@ def main():
 
     total_revenue = 0 
     # Open the revenue file for reading
-    f = open('Project 2 - Python/Revenue.dat', 'r')
+    f = open('Revenue.dat', 'r')
     
     # Read the record
     for revenue in f:

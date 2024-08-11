@@ -1,6 +1,7 @@
 #Description: Code for option 3: Enter Company Expenses.
 #Name: Jennifer Lyver
 #date: August 9, 2024 - August 10, 2024
+#EDIT - JL August 10, 2024 - Adjusted Filepaths due to feedback - will no longer run with github desktop.
 
 #imports:
 from datetime import datetime
@@ -20,7 +21,7 @@ def Val_YN(string):
     return val, if_yes
 
 def read_maintenance(run):
-    with open("Project 2 - Python/Maintenance.dat", "r") as f:
+    with open("Maintenance.dat", "r") as f:
         global Maintenance_ID
         Maintenance_ID = []
         global Invoice_ID
@@ -60,7 +61,7 @@ def get_invoicenumber(run):
         Invoice_ID = input("\nInvoice Number: ")
         Invoice_ID.replace(",", "|") #won't change the abilty to read the file if commas are in the invoice number.
         if one_invoice:
-            with open ("Project 2 - Python/Expenses.dat", "r") as f:
+            with open ("Expenses.dat", "r") as f:
                 expense_line = f.readline()
                 for line in expense_line:
                     line = line.split(",")
@@ -128,7 +129,7 @@ def main():
             Total = get_money("\n    Total: ")
             #write to expense file
             if one_invoice:
-                with open ("Project 2 - Python/Expenses.dat", "a") as f:
+                with open ("Expenses.dat", "a") as f:
                     f.write(f"\n{Invoice_ID},{Invoice_date},{Driver_ID},{Maintenance_ID},{Subtotal},{HST},{Total}")
             if run ==1:
                 Maintenance_date = get_date("\n    Maintenance Date: ")
@@ -141,7 +142,7 @@ def main():
                     else:
                         print("\nInvalid Car ID. Please enter a valid Car ID.")
                 #write to maintenance file
-                with open("\nProject 2 - Python/Maintenance.dat", "a") as f:
+                with open("\nMaintenance.dat", "a") as f:
                     f.write(f"\n{Maintenance_ID},{Invoice_ID},{Car_ID},{Maintenance_date},{Maintenance_description},{Total}")
 
         elif run == "3": 
