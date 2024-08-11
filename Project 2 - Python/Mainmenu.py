@@ -5,6 +5,7 @@
 
 #imports
 import os 
+import habfunctions #added 2024-08-11
 
 #definitions
 def run_main(pythonfile):
@@ -20,6 +21,11 @@ def run_main(pythonfile):
     module.main()
     
 indent = " "*4
+
+# added 2024-08-11
+# code to run everytime the program is started
+# automatic updates of stand fees on the first of the month
+habfunctions.update_stand_fees()
 
 #main program loop
 while True:
