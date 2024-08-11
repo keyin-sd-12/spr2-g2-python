@@ -1,7 +1,9 @@
 #Description: Main menu to run other sprint programs
 #name: Jennifer Lyver
 #date: June 30, 2024
-
+#EDIT - EK August 11, 2024 - Added abilty to update stand fees automatically.
+#EDIT - JL August 11, 2024 - Adjusted Filepaths due to feedback - will no longer run with github desktop.
+#EDIT - JL August 11, 2024 - Adjusted code as it no longer needs to find absolute filepath.
 
 #imports
 import os 
@@ -9,16 +11,8 @@ import habfunctions #added 2024-08-11
 
 #definitions
 def run_main(pythonfile):
-    # Get the absolute path of the script
-    script_path = os.path.abspath(__file__)
-    # Extract the directory path
-    script_dir = os.path.dirname(script_path)
-    # Construct the full path to the module
-    module_path = os.path.join(script_dir, f"{pythonfile}.py")
-    # Import the module
-    module = __import__(f"{pythonfile}")
-    # Call the main function of the module
-    module.main()
+    module = __import__(f"Option{run}")
+    module.main() #runs the python file
     
 indent = " "*4
 
