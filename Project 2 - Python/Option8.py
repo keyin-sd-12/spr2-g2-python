@@ -144,8 +144,8 @@ def main():
     # Read the record
     for Employee in f:
         EmployeeList = Employee.split(',')
-        EmployeeOwnership = EmployeeList[12].strip()
-        EmployeeDues = float(EmployeeList[13].strip())
+        EmployeeOwnership = EmployeeList[8].strip()
+        EmployeeDues = float(EmployeeList[9].strip())
         
         # Update the accumulators
         if EmployeeDues > 0:
