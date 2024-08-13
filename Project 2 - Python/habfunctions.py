@@ -38,7 +38,7 @@ def yyyymmdd(date_string):
 # data types for each field in a record
 FIELD_DATA_TYPES = {
     DEFAULTSFILENAME: [int, int, float, float, float, float], 
-    EMPLOYEEFILENAME: [int, str, str, str, str, str, str, str, str, yyyymmdd, str, str, bool, float],
+    EMPLOYEEFILENAME: [int, str, str, str, str, yyyymmdd, str, str, bool, float],
     REVENUEFILENAME:  [int, yyyymmdd, str, int, float, float, float]
 }
 
